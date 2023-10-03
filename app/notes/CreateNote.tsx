@@ -1,15 +1,12 @@
 "use client";
 
-// export default function Test() {
-//   return (
-//     <div>
-//       <h1>Create Note</h1>
-//     </div>
-//   );
-// }
-
+import PocketBase from "pocketbase";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import Router from "next/router";
+
+const url = "https://next-notes.pockethost.io";
+const db = new PocketBase(url);
 
 export default function CreateNote() {
   const [title, setTitle] = useState("");
@@ -17,30 +14,24 @@ export default function CreateNote() {
 
   const router = useRouter();
 
-  const create = async () => {
-    // const db = new PocketBase('http://127.0.0.1:8090');
+  async function create(e: React.ChangeEvent<HTMLInputElement>) {
+    e.preventDefault();
 
-    // await db.records.create('notes', {
-    //   title,
-    //   content,
-    // });
-
-    await fetch("http://127.0.0.1:8090/api/collections/notes/records", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        title,
-        content,
-      }),
-    });
+    try {
+      await db.collection("notes").create({ title, content });
+    } catch (error) {
+      console.log("Error:", error);
+    }
 
     setContent("");
     setTitle("");
 
+    await new Promise((r) => setTimeout(r, 2000));
+
+    // location.reload(true);
     router.refresh();
-  };
+    // Router.reload();
+  }
 
   return (
     <form onSubmit={create}>
