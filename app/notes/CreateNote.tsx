@@ -34,6 +34,7 @@ export default function CreateNote() {
   }
 
   return (
+    // @ts-ignore //
     <form onSubmit={create}>
       <h3>Create a new Note</h3>
       <input
