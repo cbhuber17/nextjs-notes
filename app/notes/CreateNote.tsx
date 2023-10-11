@@ -3,7 +3,6 @@
 import PocketBase from "pocketbase";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import Router from "next/router";
 
 const url = "https://next-notes.pockethost.io";
 const db = new PocketBase(url);
@@ -26,11 +25,7 @@ export default function CreateNote() {
     setContent("");
     setTitle("");
 
-    await new Promise((r) => setTimeout(r, 2000));
-
-    // location.reload(true);
     router.refresh();
-    // Router.reload();
   }
 
   return (

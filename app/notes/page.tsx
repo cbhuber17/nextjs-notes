@@ -3,6 +3,8 @@ import styles from "./Notes.module.css";
 import CreateNote from "./CreateNote";
 import PocketBase from "pocketbase";
 
+export const dynamic = "force-dynamic";
+
 async function getNotes() {
   const url = "https://next-notes.pockethost.io";
   const db = new PocketBase(url);
