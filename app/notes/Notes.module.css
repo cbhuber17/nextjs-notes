@@ -19,6 +19,7 @@
 }
 
 .note {
+  position: relative;
   height: auto;
   width: 200px;
   padding: 0.2rem 1rem;

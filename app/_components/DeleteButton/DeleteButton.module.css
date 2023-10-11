@@ -1,0 +1,11 @@
+.closebutton {
+  position: absolute;
+  top: -5px;
+  right: -23px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: orange;
+  z-index: 10;
+}
