@@ -4,4 +4,6 @@ A simple app utilizing both server-side and client-side components to create sti
 
 ## TODO:
 
-- Delete a note
+- Delete a note, implement functionality
+- More page styling
+- Change font
