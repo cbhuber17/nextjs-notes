@@ -21,7 +21,7 @@
 .note {
   position: relative;
   height: auto;
-  width: 200px;
+  width: 250px;
   padding: 0.2rem 1rem;
   margin: 0.5rem;
   background: #ffff00;
@@ -37,13 +37,6 @@
   margin: 0;
   line-height: 1.15;
   font-size: 3rem;
-}
-
-.note {
-  height: auto;
-  width: 200px;
-  padding: 0.25rem;
-  border-radius: 2px;
 }
 
 .title {
@@ -64,4 +57,19 @@
 .action {
   text-align: left;
   color: dodgerblue;
+}
+
+.header1 {
+  text-align: center;
+  text-decoration: underline;
+  font-size: 3rem;
+}
+
+.header2 {
+  text-align: center;
+  font-size: 2rem;
+}
+
+.header5 {
+  font-size: 1.5rem;
 }

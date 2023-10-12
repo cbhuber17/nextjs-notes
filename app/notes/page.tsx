@@ -28,7 +28,7 @@ export default async function NotesPage() {
 
   return (
     <div>
-      <h1>Notes</h1>
+      <h1 className={styles.header1}>Notes</h1>
       <div className={styles.grid}>
         {notes!.map((note) => (
           <Note key={note.id} note={note}></Note>
@@ -48,8 +48,9 @@ function Note({ note }: any) {
       {/* <DeleteButton onClick={() => handleDelete(id)} /> */}
       <DeleteButton />
       <Link href={`/notes/${id}`}>
-        <h2>{title}</h2>
-        <h5>{content}</h5>
+        <h2 className={styles.header2}>{title}</h2>
+        <h5 className={styles.header5}>{content}</h5>
+        <hr />
         <p>{created}</p>
       </Link>
     </div>
